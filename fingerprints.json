@@ -1,0 +1,152 @@
+{
+  "_comment": "Subdomain-takeover fingerprints for DNSleuth. Inspired by the community project 'can-i-take-over-xyz'. Each entry: a service name, CNAME patterns that hint the subdomain delegates to that service, and HTTP body fingerprints that indicate an UNCLAIMED/vulnerable resource. 'vulnerable' marks services generally confirmed as takeover-able; 'edge' means it depends on configuration. Update freely.",
+  "fingerprints": [
+    {
+      "service": "AWS/S3",
+      "cname": ["s3.amazonaws.com", "s3-website", "amazonaws.com"],
+      "fingerprint": ["NoSuchBucket", "The specified bucket does not exist"],
+      "status": 404,
+      "vulnerable": true
+    },
+    {
+      "service": "GitHub Pages",
+      "cname": ["github.io", "github.map.fastly.net"],
+      "fingerprint": ["There isn't a GitHub Pages site here", "For root URLs (like http://example.com/) you must provide an index.html file"],
+      "status": 404,
+      "vulnerable": true
+    },
+    {
+      "service": "Heroku",
+      "cname": ["herokuapp.com", "herokudns.com", "herokussl.com"],
+      "fingerprint": ["No such app", "herokucdn.com/error-pages/no-such-app.html"],
+      "status": 404,
+      "vulnerable": "edge"
+    },
+    {
+      "service": "Fastly",
+      "cname": ["fastly.net"],
+      "fingerprint": ["Fastly error: unknown domain", "Please check that this domain has been added to a service"],
+      "status": 404,
+      "vulnerable": "edge"
+    },
+    {
+      "service": "Shopify",
+      "cname": ["myshopify.com"],
+      "fingerprint": ["Sorry, this shop is currently unavailable", "Only one step left!"],
+      "status": 404,
+      "vulnerable": "edge"
+    },
+    {
+      "service": "Tumblr",
+      "cname": ["domains.tumblr.com"],
+      "fingerprint": ["Whatever you were looking for doesn't currently exist at this address", "There's nothing here."],
+      "status": 404,
+      "vulnerable": true
+    },
+    {
+      "service": "WordPress",
+      "cname": ["wordpress.com"],
+      "fingerprint": ["Do you want to register"],
+      "status": 404,
+      "vulnerable": "edge"
+    },
+    {
+      "service": "Ghost",
+      "cname": ["ghost.io"],
+      "fingerprint": ["The thing you were looking for is no longer here, or never was"],
+      "status": 404,
+      "vulnerable": "edge"
+    },
+    {
+      "service": "Surge.sh",
+      "cname": ["surge.sh"],
+      "fingerprint": ["project not found"],
+      "status": 404,
+      "vulnerable": true
+    },
+    {
+      "service": "Bitbucket",
+      "cname": ["bitbucket.io"],
+      "fingerprint": ["Repository not found"],
+      "status": 404,
+      "vulnerable": true
+    },
+    {
+      "service": "Pantheon",
+      "cname": ["pantheonsite.io"],
+      "fingerprint": ["The gods are wise, but do not know of the site which you seek", "404 error unknown site"],
+      "status": 404,
+      "vulnerable": true
+    },
+    {
+      "service": "UptimeRobot",
+      "cname": ["stats.uptimerobot.com"],
+      "fingerprint": ["page not found", "This public status page does not seem to exist"],
+      "status": 404,
+      "vulnerable": true
+    },
+    {
+      "service": "Unbounce",
+      "cname": ["unbouncepages.com"],
+      "fingerprint": ["The requested URL was not found on this server", "Unbounce"],
+      "status": 404,
+      "vulnerable": "edge"
+    },
+    {
+      "service": "Netlify",
+      "cname": ["netlify.app", "netlify.com"],
+      "fingerprint": ["Not Found - Request ID", "Not found - Netlify"],
+      "status": 404,
+      "vulnerable": "edge"
+    },
+    {
+      "service": "Azure/TrafficManager",
+      "cname": ["trafficmanager.net", "azurewebsites.net", "cloudapp.net", "cloudapp.azure.com", "azureedge.net", "azure-api.net", "azurefd.net"],
+      "fingerprint": ["404 Web Site not found", "Error 404 - Web app not found"],
+      "status": 404,
+      "vulnerable": "edge"
+    },
+    {
+      "service": "Readme.io",
+      "cname": ["readme.io"],
+      "fingerprint": ["Project doesnt exist... yet!"],
+      "status": 404,
+      "vulnerable": true
+    },
+    {
+      "service": "Helpjuice",
+      "cname": ["helpjuice.com"],
+      "fingerprint": ["We could not find what you're looking for."],
+      "status": 404,
+      "vulnerable": true
+    },
+    {
+      "service": "HelpScout",
+      "cname": ["helpscoutdocs.com"],
+      "fingerprint": ["No settings were found for this company"],
+      "status": 404,
+      "vulnerable": true
+    },
+    {
+      "service": "Cargo Collective",
+      "cname": ["cargocollective.com"],
+      "fingerprint": ["<title>404 &mdash; File not found</title>"],
+      "status": 404,
+      "vulnerable": true
+    },
+    {
+      "service": "Webflow",
+      "cname": ["proxy-ssl.webflow.com", "proxy.webflow.com", "webflow.io"],
+      "fingerprint": ["The page you are looking for doesn't exist or has been moved"],
+      "status": 404,
+      "vulnerable": "edge"
+    },
+    {
+      "service": "Zendesk",
+      "cname": ["zendesk.com"],
+      "fingerprint": ["Help Center Closed", "this help center no longer exists"],
+      "status": 404,
+      "vulnerable": "edge"
+    }
+  ]
+}
